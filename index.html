@@ -3,28 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TV Show Data Visualization</title>
+        <title>TVisualizer</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="wrapper">
-            <header>
-                <h1>TV Show Data Visualization</h1>
-                <input type="text" id="search" placeholder="Search for TV Shows">
-            </header>
-            <div class="container">
-                <button id="back-button">Back</button>
-                <div id="bubble-chart-container">
-                    <figure class="highcharts-figure">
-                        <div id="container"></div>
-                    </figure>                
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 class="business-name">TVisualizer</h1>
+            </div>
+            <div class="search-container">
+                <input type="search" placeholder="Search..." class="search-bar">
+            </div>
+        </header>
+        <main class="container">
+            <button id="back-button">Back</button>
+            <div class="green-div" id="bubble-chart-container">
+                <figure class="highcharts-figure">
+                    <div id="container">
+                        Bubble Map Here
+                    </div>
+                </figure>
+            </div>
+            <div class="orange-div" id="show-details">
+                <div class="show-image detail">
+                    <img src="tv-show-image.jpg" alt="TV Show Image">
                 </div>
-                <div id="show-details">
-                    <img src="" id="show-image"/>
-                    <h1 id="show-title"></h1>
+                <h2 class="show-title detail">Title of Show</h2>
+                <p class="show-description detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget sapien semper, commodo est sed, tristique mauris. Integer quis turpis ac lacus facilisis volutpat.</p>
+                <div class="show-info detail">
+                    <span class="show-rating detail">Rating: 8.5/10</span>
+                    <span class="show-runtime detail">Runtime: 45 min</span>
                 </div>
             </div>
-        </div>
+        </main>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/highcharts-more.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
