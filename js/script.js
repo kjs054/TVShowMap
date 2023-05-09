@@ -137,7 +137,7 @@ function transformJSONArrayToDict(data) {
 }
 
 var showsList = {}
-const pagesCount = 50
+const pagesCount = 25
 async function fetchShows(page = 0) {
   if (page == 0) {
     showsList = {}
