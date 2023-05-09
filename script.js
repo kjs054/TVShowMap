@@ -1,3 +1,8 @@
+//Filtering elements
+const search = document.getElementById("search");
+const usFilter = document.querySelector("input[name=us-filter]");
+const airingFilter = document.querySelector("input[name=airing-filter]");
+
 //Globally accessible object for shows with key being their ID
 let storedShows = {};
 
@@ -124,7 +129,35 @@ async function mainEvent() {
     const result = await results.json()
     storedList = transformJSONArrayToDict(shows)
     createBubbleChart(filteredData())
-
+    
+    search.addEventListener("input", (e) => { 
+        const searchQuery = e.target.value;
+        const filtered = filteredData().filter((item) => {
+          const lowerCaseName = item.name.toLowerCase();
+          const lowerCaseQuery = searchQuery.toLowerCase();
+          return lowerCaseName.includes(lowerCaseQuery);
+        });
+        createBubbleChart(filtered)
+      });
+    
+      usFilter.addEventListener("change", (e) => {
+        if (usFilter.checked) {
+          filters["country"] = "US"
+        } else {
+          delete filters["country"]
+        }
+        createBubbleChart(filteredData())
+      });
+    
+      airingFilter.addEventListener("change", (e) => {
+        if (airingFilter.checked) {
+          filters["status"] = "Running"
+        } else {
+          delete filters["status"]
+        }
+        createBubbleChart(filteredData())
+      });
+    
     
 }
 
