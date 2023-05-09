@@ -158,6 +158,11 @@ header {
     border-radius: 4px;
 }
 
+.right {
+    flex: 1;
+    max-width: 290px;
+}
+
 .show-image {
     width: 100%;
     object-fit: cover;
