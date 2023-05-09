@@ -31,3 +31,9 @@ The primary visualization in TVisualizer is the packed bubble map that displays 
 ### CSS Frameworks
 
 * No CSS frameworks were utilized during development. However, we did use flexbox to achieve the layout of our site.
+
+## Project Description
+
+TVisualizer aims to help users discover new TV shows and gain insights into the shows they watch by presenting data in a visually appealing and interactive manner. The application provides users with a packed bubble map that allows them to explore different aspects of the television landscape, such as viewer ratings, show genres, network distributions, and airing schedules.
+
+By leveraging the TVMaze API and a combination of front-end technologies, TVisualizer offers a visually engaging web application that provides a rich user experience for exploring TV shows.
