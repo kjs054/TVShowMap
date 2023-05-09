@@ -1,3 +1,11 @@
+//Show Details Elements
+const showImage = document.getElementById("show-image")
+const showDescription = document.querySelector(".show-description")
+const showTitle = document.querySelector(".show-title")
+const showRating = document.querySelector(".show-rating")
+const showRuntime = document.querySelector(".show-runtime")
+const showDetails = document.querySelector(".show-details")
+
 //Filtering elements
 const search = document.getElementById("search");
 const usFilter = document.querySelector("input[name=us-filter]");
@@ -85,6 +93,18 @@ function createBubbleChart(data, color = undefined) {
     });
   }
   
+  function displayShowDetails(show) {
+    // Display the show details on the right side
+    const storedShows = JSON.parse(localStorage.getItem("storedShows"))
+    showDetails.classList.remove("hide")
+    const selectedShow = storedShows[show]
+    showImage.src = selectedShow.image.medium
+    showTitle.innerHTML = selectedShow.name
+    showDescription.innerHTML = selectedShow.summary
+    showRating.innerHTML = "Rating: " + selectedShow.rating.average * 10
+    showRuntime.innerHTML = "Runtime: " + selectedShow.averageRuntime + " min"
+  }
+
   function transformArray(input) {
     const output = [];
     input.forEach(item => {
@@ -129,7 +149,7 @@ async function mainEvent() {
     const result = await results.json()
     storedList = transformJSONArrayToDict(shows)
     createBubbleChart(filteredData())
-    
+
     search.addEventListener("input", (e) => { 
         const searchQuery = e.target.value;
         const filtered = filteredData().filter((item) => {
