@@ -148,7 +148,7 @@ async function fetchShows(page = 0) {
     const result = await results.json()
     const transformed = transformJSONArrayToDict(result)
     showsList = Object.assign({}, transformed, showsList)
-    container.innerHTML = "Loading " + Object.keys(showsList).length + " Shows Found"
+    container.innerHTML = "Loading " + Object.keys(showsList).length + " / 3000 shows"
     if (page != pagesCount) {
       page++;
       await new Promise((resolve) => setTimeout(resolve, 200)); // setup a sleep depend your api request/second requirement.
